@@ -17,6 +17,7 @@ import urllib.request
 from math import ceil, floor
 from boto3 import client
 
+
 ##################### 로깅 ###########################
 log_stream = StringIO()    
 logging.basicConfig(stream=log_stream, level=logging.WARNING)

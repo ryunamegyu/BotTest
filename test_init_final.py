@@ -15,6 +15,7 @@ from oauth2client.service_account import ServiceAccountCredentials #정산
 from io import StringIO
 import urllib.request
 from math import ceil, floor
+from boto3 import client
 
 ##################### 로깅 ###########################
 log_stream = StringIO()    

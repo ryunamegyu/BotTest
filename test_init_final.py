@@ -450,16 +450,7 @@ async def MakeSound(saveSTR, filename):
     with open(f"./{filename}.mp3", "wb") as mp3file:
         data = stream.read()
         mp3file.write(data)
-	'''
-	try:
-		encText = urllib.parse.quote(saveSTR)
-		urllib.request.urlretrieve("https://clova.ai/proxy/voice/api/tts?text=" + encText + "%0A&voicefont=1&format=wav",filename + '.wav')
-	except Exception as e:
-		print (e)
-		tts = gTTS(saveSTR, lang = 'ko')
-		tts.save('./' + filename + '.wav')
-		pass
-	'''
+
 #mp3 파일 재생함수	
 async def PlaySound(voiceclient, filename):
 	source = discord.FFmpegPCMAudio(filename)

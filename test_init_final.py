@@ -1812,7 +1812,10 @@ class mainCog(commands.Cog):
 			sayMessage = msg
 			await MakeSound(ctx.message.author.display_name +'님이, ' + sayMessage, './sound/say')
 			await ctx.send("```< " + ctx.author.display_name + " >님이 \"" + sayMessage + "\"```", tts=False)
-			await PlaySound(ctx.voice_client, './sound/say.wav')
+		# 기존 남자	
+		#	await PlaySound(ctx.voice_client, './sound/say.wav')
+		# 아마존 aws 여자
+			await PlaySound(ctx.voice_client, './sound/say.mp3')
 		else:
 			return
 

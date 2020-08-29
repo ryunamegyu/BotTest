@@ -430,10 +430,18 @@ channel = ''
 
 #mp3 파일 생성함수(gTTS 이용, 남성목소리)
 async def MakeSound(saveSTR, filename):
-	
-	tts = gTTS(saveSTR, lang = 'ko')
-	tts.save('./' + filename + '.wav')
-	
+# 기존방식	
+#	tts = gTTS(saveSTR, lang = 'ko')
+#	tts.save('./' + filename + '.wav')
+# 아마존 aws
+	polly = client("polly", aws_access_key_id = "AKIA4QRVLZNACL6OH7VB", aws_secret_access_key = "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", region_name = "eu-west-1")
+	s = '<speak><prosody rate="' + str(100) + '%">' +  saveSTR + '</prosody></speak>'
+	response = polly.synthesize_speech(TextType = "ssml", Text=s, OutputFormat="mp3", VoiceId="Seoyeon")
+	stream = response.get("AudioStream")
+
+	with open(f"./{filename}.mp3", "wb") as mp3file:
+		data = stream.read()
+		mp3file.write(data)
 	'''
 	try:
 		encText = urllib.parse.quote(saveSTR)

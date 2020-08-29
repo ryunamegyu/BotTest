@@ -435,14 +435,21 @@ async def MakeSound(saveSTR, filename):
 #	tts = gTTS(saveSTR, lang = 'ko')
 #	tts.save('./' + filename + '.wav')
 # 아마존 aws
-	polly = client("polly", aws_access_key_id = "AKIA4QRVLZNACL6OH7VB", aws_secret_access_key = "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", region_name = "eu-west-1")
-	s = '<speak><prosody rate="' + str(100) + '%">' +  saveSTR + '</prosody></speak>'
-	response = polly.synthesize_speech(TextType = "ssml", Text=s, OutputFormat="mp3", VoiceId="Seoyeon")
-	stream = response.get("AudioStream")
+    polly = client("polly", aws_access_key_id = "AKIA4QRVLZNACL6OH7VB", aws_secret_access_key = "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", region_name = "eu-west-1")
 
-	with open(f"./{filename}.mp3", "wb") as mp3file:
-		data = stream.read()
-		mp3file.write(data)
+    s = '<speak><prosody rate="' + str(100) + '%">' +  saveSTR + '</prosody></speak>'
+
+    response = polly.synthesize_speech(
+        TextType = "ssml",
+        Text=s,
+        OutputFormat="mp3",
+        VoiceId="Seoyeon")
+
+    stream = response.get("AudioStream")
+
+    with open(f"./{filename}.mp3", "wb") as mp3file:
+        data = stream.read()
+        mp3file.write(data)
 	'''
 	try:
 		encText = urllib.parse.quote(saveSTR)

@@ -1242,7 +1242,7 @@ class mainCog(commands.Cog):
 					)
 			embed.add_field(
 					name="----- Special Thanks to. -----",
-					value= '```총무, 옹님, 공부중, 꽃신, 별빛, K.H.Sim, 쿠쿠, 팥빵, Bit```'
+					value= '``````'
 					)
 			await ctx.send(embed=embed, tts=False)
 		else:
@@ -2955,6 +2955,26 @@ class mainCog(commands.Cog):
 		return await ctx.send(result_rock_paper_scissors)
 
 	################ ?????????????? ################ 
+	@commands.command(name='/글루자')
+	async def jari1_(self, ctx):
+		await PlaySound(ctx.voice_client, './sound/글루자리체.mp3')
+	
+	@commands.command(name='/기란자')
+	async def jari2_(self, ctx):
+		await PlaySound(ctx.voice_client, './sound/기란자리체.mp3')
+	
+	@commands.command(name='/디온자')
+	async def jari3_(self, ctx):
+		await PlaySound(ctx.voice_client, './sound/디온자리체.mp3')
+	
+	@commands.command(name='/아덴자')
+	async def jari4_(self, ctx):
+		await PlaySound(ctx.voice_client, './sound/아덴자리체.mp3')
+	
+	@commands.command(name='/오렌자')
+	async def jari5_(self, ctx):
+		await PlaySound(ctx.voice_client, './sound/오렌자리체.mp3')
+					
 	@commands.command(name='!오빠')
 	async def brother1_(self, ctx):
 		await PlaySound(ctx.voice_client, './sound/오빠.mp3')

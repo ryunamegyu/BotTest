@@ -2557,7 +2557,7 @@ class mainCog(commands.Cog):
 				await result_race.edit(content = output + ':checkered_flag:  경주 시작!')								
 
 				for i in range(len(racing_member)):
-					test = random.sample(range(2,field_size-2), race_info[i][2])
+					test = random.sample(range(2,field_size-4), race_info[i][2])
 					while len(test) != tmp_race_tab + len(racing_member)-1 :
 						test.append(1)
 					test.append(1)
@@ -2576,7 +2576,7 @@ class mainCog(commands.Cog):
 						cur_pos[i] = random_pos[i][j]
 						str_racing_field.append("".join(racing_field[i]))
 
-					await asyncio.sleep(2) 
+					await asyncio.sleep(1) 
 
 					for i in range(len(racing_member)):
 						output +=  str_racing_field[i] + '\n'
@@ -2618,7 +2618,7 @@ class mainCog(commands.Cog):
 					result_str += result[i][1] + "  " + result[i][0] + "  "
 					
 				#print(result)
-				await asyncio.sleep(2)
+				await asyncio.sleep(1)
 				return await result_race.edit(content = output + ':tada: 경주 종료!\n' + result_str)
 		else:
 			return

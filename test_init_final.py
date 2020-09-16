@@ -1743,7 +1743,7 @@ class mainCog(commands.Cog):
 				for zz in range(num_cong):
 					text = f"{zz}";
 					if y == text:
-						win_member.append(f"{zz}{input_dict[f'{x}']}")
+						win_member.append(f"{zz}:{input_dict[f'{x}']}")
 					
 					#else :
 				if y == 'x':

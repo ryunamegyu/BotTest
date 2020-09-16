@@ -1740,9 +1740,9 @@ class mainCog(commands.Cog):
 
 			for x, y in result.items():
 				join_member.append(f"{x}:{input_dict[f'{x}']}")
-				for z in num_cong:
-					t = f"{z}";
-					if y == t:
+				for zz in range(num_cong):
+					text = f"{zz}";
+					if y == text:
 						win_member.append(f"{input_dict[f'{x}']}")
 					else :
 						lose_member.append(f"{input_dict[f'{x}']}")

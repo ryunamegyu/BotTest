@@ -1747,14 +1747,22 @@ class mainCog(commands.Cog):
 					else :
 						lose_member.append(f"{input_dict[f'{x}']}")
 
-			win_member = sorted(win_member)
+			# 당첨순서 번호로 정렬
+			win_member = sorted(win_member)	
+			# 미당첨자중 중복제거
+			loser_member = []
+			for v in lose_member:
+				if v not in loser_member:
+					loser_member.append(v)
+							
+							   
 			embed = discord.Embed(title  = "🎲 사다리! 묻고 더블로 가!",
 				color=0x00ff00
 				)
 			embed.description = f"||```{input_data}\n{''.join(ladder_data)}{' '.join(output_list)}```||"
 			embed.add_field(name = "👥 참가자", value =  f"```fix\n{', '.join(join_member)}```", inline=False)
 			embed.add_field(name = "😍 당첨", value =  f"```fix\n{', '.join(win_member)}```")
-			embed.add_field(name = "😭 낙첨", value =  f"```{', '.join(lose_member)}```")
+			embed.add_field(name = "😭 낙첨", value =  f"```{', '.join(loser_member)}```")
 			return await ctx.send(embed = embed)
 		else:
 			return
@@ -1884,14 +1892,14 @@ class mainCog(commands.Cog):
 				if bossMungFlag[i] != True :
 					aa.append(bossData[i][0])		                 #output_bossData[0] : 보스명
 					aa.append(bossTime[i])                           #output_bossData[1] : 시간
-					aa.append(bossTime[i].strftime('%H:%M'))      #output_bossData[2] : 시간(00:00:00)
+					aa.append(bossTime[i].strftime('%H:%M:%S'))      #output_bossData[2] : 시간(00:00:00)
 					ouput_bossData.append(aa)
 				aa = []
 
 			for i in range(fixed_bossNum):
 				aa.append(fixed_bossData[i][0])                      #output_bossData[0] : 보스명
 				aa.append(fixed_bossTime[i])                         #output_bossData[1] : 시간
-				aa.append(fixed_bossTime[i].strftime('%H:%M'))    #output_bossData[2] : 시간(00:00:00)
+				aa.append(fixed_bossTime[i].strftime('%H:%M:%S'))    #output_bossData[2] : 시간(00:00:00)
 				ouput_bossData.append(aa)
 				aa = []
 

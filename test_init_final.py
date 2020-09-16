@@ -1747,6 +1747,7 @@ class mainCog(commands.Cog):
 					else :
 						lose_member.append(f"{input_dict[f'{x}']}")
 
+			win_member = sorted(win_member)
 			embed = discord.Embed(title  = "🎲 사다리! 묻고 더블로 가!",
 				color=0x00ff00
 				)

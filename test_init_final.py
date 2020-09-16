@@ -2557,7 +2557,7 @@ class mainCog(commands.Cog):
 				await result_race.edit(content = output + ':checkered_flag:  경주 시작!')								
 
 				for i in range(len(racing_member)):
-					test = random.sample(range(2,field_size-4), race_info[i][2])
+					test = random.sample(range(2,field_size-6), race_info[i][2])
 					while len(test) != tmp_race_tab + len(racing_member)-1 :
 						test.append(1)
 					test.append(1)

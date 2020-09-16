@@ -1764,7 +1764,7 @@ class mainCog(commands.Cog):
 			embed.description = f"||```{input_data}\n{''.join(ladder_data)}{' '.join(output_list)}```||"
 			embed.add_field(name = "👥 참가자", value =  f"```fix\n{', '.join(join_member)}```", inline=False)
 			embed.add_field(name = "😍 당첨", value =  f"```fix\n{', '.join(win_member)}```")
-			embed.add_field(name = "😭 낙첨", value =  f"```{', '.join(loser_member)}```")
+			embed.add_field(name = "😭 낙첨", value =  f"```{', '.join(lose_member)}```")
 			return await ctx.send(embed = embed)
 		else:
 			return

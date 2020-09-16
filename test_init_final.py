@@ -2576,7 +2576,7 @@ class mainCog(commands.Cog):
 						cur_pos[i] = random_pos[i][j]
 						str_racing_field.append("".join(racing_field[i]))
 
-					await asyncio.sleep() 
+					await asyncio.sleep(0.1) 
 
 					for i in range(len(racing_member)):
 						output +=  str_racing_field[i] + '\n'
@@ -2618,7 +2618,7 @@ class mainCog(commands.Cog):
 					result_str += result[i][1] + "  " + result[i][0] + "  "
 					
 				#print(result)
-				await asyncio.sleep()
+				await asyncio.sleep(0.1)
 				return await result_race.edit(content = output + ':tada: 경주 종료!\n' + result_str)
 		else:
 			return

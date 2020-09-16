@@ -2549,11 +2549,11 @@ class mainCog(commands.Cog):
 					output +=  str_racing_field[i] + '\n'
 
 				result_race = await ctx.send(output + ':traffic_light: 3초 후 경주가 시작됩니다!')
-				await asyncio.sleep(1)
+				await asyncio.sleep(0.1)
 				await result_race.edit(content = output + ':traffic_light: 2초 후 경주가 시작됩니다!')
-				await asyncio.sleep(1)
+				await asyncio.sleep(0.1)
 				await result_race.edit(content = output + ':traffic_light: 1초 후 경주가 시작됩니다!')
-				await asyncio.sleep(1)
+				await asyncio.sleep(0.1)
 				await result_race.edit(content = output + ':checkered_flag:  경주 시작!')								
 
 				for i in range(len(racing_member)):

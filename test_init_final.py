@@ -1926,7 +1926,8 @@ class mainCog(commands.Cog):
 								minutes, seconds = divmod(remainder,60)
 
 							#	result_lefttime += '다음 ' + ouput_bossData[i][0] + '탐까지 %02d:%02d:%02d 남았습니다. ' % (hours,minutes,seconds) + '[' +  ouput_bossData[i][2] + ']\n'
-								result_lefttime += '다음   [  ' +  ouput_bossData[i][0] + '  ]   탐까지   [  %02d:%02d  ]   남았습니다. ' % (hours,minutes) + '[' +  ouput_bossData[i][2] + ']\n'
+							#	result_lefttime += '다음   [  ' +  ouput_bossData[i][0] + '  ]   탐까지   [  %02d:%02d  ]   남았습니다. ' % (hours,minutes) + '[' +  ouput_bossData[i][2] + ']\n'
+								result_lefttime += '다음 보스  [  %02d:%02d  ]  뒤' % (hours,minutes) + '[  ' +  ouput_bossData[i][0] + '  ]    [' +  ouput_bossData[i][2] + ']\n'
 				else :
 					for j in range(len(sorted_datelist)):
 						for i in range(len(ouput_bossData)):						
@@ -1938,7 +1939,8 @@ class mainCog(commands.Cog):
 								minutes, seconds = divmod(remainder,60)
 
 							#	result_lefttime += '다음 ' + ouput_bossData[i][0] + '탐까지 %02d:%02d:%02d 남았습니다. ' % (hours,minutes,seconds) + '[' +  ouput_bossData[i][2] + ']\n'
-								result_lefttime += '다음   [  ' +  ouput_bossData[i][0] + '  ]   탐까지   [  %02d:%02d  ]   남았습니다. ' % (hours,minutes) + '[' +  ouput_bossData[i][2] + ']\n'
+							#	result_lefttime += '다음   [  ' +  ouput_bossData[i][0] + '  ]   탐까지   [  %02d:%02d  ]   남았습니다. ' % (hours,minutes) + '[' +  ouput_bossData[i][2] + ']\n'
+								result_lefttime += '다음 보스  [  %02d:%02d  ]  뒤' % (hours,minutes) + '[  ' +  ouput_bossData[i][0] + '  ]    [' +  ouput_bossData[i][2] + ']\n'
 				embed = discord.Embed(
 					description= result_lefttime,
 					color=0xff0000

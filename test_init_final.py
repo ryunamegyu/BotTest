@@ -1070,11 +1070,12 @@ class taskCog(commands.Cog):
 											color=0xff0000
 											)
 										await self.bot.get_channel(channel).send(embed=embed, tts=False)
-										try:
-											if basicSetting[21] == "1":
-												await PlaySound(self.bot.voice_clients[0], './sound/' + bossData[i][0] + '멍.mp3')
-										except:
-											pass
+									#NG 멍알림 주석
+									#	try:
+									#		if basicSetting[21] == "1":
+									#			await PlaySound(self.bot.voice_clients[0], './sound/' + bossData[i][0] + '멍.mp3')
+									#	except:
+									#		pass
 
 			await asyncio.sleep(1) # task runs every 60 seconds
 		
